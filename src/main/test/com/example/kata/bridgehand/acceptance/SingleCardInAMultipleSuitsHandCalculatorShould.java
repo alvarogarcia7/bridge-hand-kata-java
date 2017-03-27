@@ -16,7 +16,7 @@ import static org.hamcrest.core.Is.is;
 public class SingleCardInAMultipleSuitsHandCalculatorShould {
     @Parameterized.Parameters
     public static Collection<Object[]> data () {
-        return Arrays.asList(new Object[][]{
+        return Arrays.asList(
                 new Object[]{"Only Aces", new String[]{"SA???",
                         "HA??",
                         "D???",
@@ -28,8 +28,7 @@ public class SingleCardInAMultipleSuitsHandCalculatorShould {
                 new Object[]{"Ace and Queen", new String[]{"SA???",
                         "HQ????????"}, 6},
                 new Object[]{"Ace and Jack", new String[]{"SA???",
-                        "HJ????????"}, 5}
-        });
+                        "HJ????????"}, 5});
     }
 
     private String[] handDescription;
