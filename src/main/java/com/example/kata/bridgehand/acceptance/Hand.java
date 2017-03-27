@@ -6,10 +6,14 @@ public class Hand {
     public final int total;
 
     public Hand (final String... descriptions) {
-        total = String.join("", descriptions).chars()
+        total = allSuitsFrom(descriptions).chars()
                         .map(valueOfCard())
                         .reduce(0, (a, b) -> a + b);
 
+    }
+
+    private String allSuitsFrom (final String[] descriptions) {
+        return String.join("", descriptions);
     }
 
     private IntUnaryOperator valueOfCard () {
