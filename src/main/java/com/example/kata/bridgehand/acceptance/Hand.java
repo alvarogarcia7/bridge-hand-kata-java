@@ -8,8 +8,8 @@ public class Hand {
 
     public Hand (final String... suitDescriptions) {
         total = allSuitsFrom(suitDescriptions).chars()
-                        .map(valueOfCard())
-                        .reduce(0, sum());
+                .map(valueOfCard())
+                .reduce(0, sum());
 
     }
 
