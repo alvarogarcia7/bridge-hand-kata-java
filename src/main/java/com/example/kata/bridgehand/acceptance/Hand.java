@@ -9,13 +9,20 @@ public class Hand {
         total = Stream.of(descriptions)
                 .map(description -> description
                         .chars()
-                        .filter(char_ -> ((int) 'A') == (char_))
-                        .count() * 4)
-                .reduce(0L, (a, b) -> a + b).intValue()+Stream.of(descriptions)
-                .map(description -> description
-                        .chars()
-                        .filter(char_ -> ((int) 'K') == (char_))
-                        .count() * 3)
-                .reduce(0L, (a, b) -> a + b).intValue();
+                        .map((char_) -> {
+                            int result = 0;
+                            switch (char_){
+                                case (int) 'A':
+                                    result = 4;
+                                    break;
+                                case (int) 'K':
+                                    result = 3;
+                                break;
+                            }
+                            return result;
+                        })
+                .reduce(0, (a, b) -> a + b))
+                .reduce(0, (a, b) -> a + b).intValue();
     }
+
 }
