@@ -24,6 +24,9 @@ public class Hand {
             case (int) 'K':
                 result = 3;
                 break;
+            case (int) 'Q':
+                result = 2;
+                break;
         }
         return result;
     }
