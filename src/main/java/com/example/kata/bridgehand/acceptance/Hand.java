@@ -11,6 +11,11 @@ public class Hand {
                         .chars()
                         .filter(char_ -> ((int) 'A') == (char_))
                         .count() * 4)
+                .reduce(0L, (a, b) -> a + b).intValue()+Stream.of(descriptions)
+                .map(description -> description
+                        .chars()
+                        .filter(char_ -> ((int) 'K') == (char_))
+                        .count() * 3)
                 .reduce(0L, (a, b) -> a + b).intValue();
     }
 }
