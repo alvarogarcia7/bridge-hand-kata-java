@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+
 public class BridgeHandCalculatorShould {
 
     @Test
@@ -15,15 +16,5 @@ public class BridgeHandCalculatorShould {
                 "D???",
                 "C???");
         assertThat(hand.total, is(0));
-    }
-
-    @Test
-    public void tell_the_points_on_a_hand_made_of_a_single_card_belonging_to_a_single_suit () {
-
-        final Hand hand = new Hand("SA???",
-                "H???",
-                "D???",
-                "C???");
-        assertThat(hand.total, is(4));
     }
 }
