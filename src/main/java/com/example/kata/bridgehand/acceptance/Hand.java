@@ -9,12 +9,8 @@ public class Hand {
     public Hand (final String... suitDescriptions) {
         total = allSuitsFrom(suitDescriptions).chars()
                 .map(valueOfCard())
-                .reduce(0, sum());
+                .sum();
 
-    }
-
-    private IntBinaryOperator sum () {
-        return (a, b) -> a + b;
     }
 
     private String allSuitsFrom (final String[] descriptions) {
