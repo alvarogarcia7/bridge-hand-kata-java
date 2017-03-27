@@ -17,7 +17,7 @@ public class Hand {
     private CardValue addAllMatching (final String cardDescriptions) {
         return allCardsIn(cardDescriptions)
                 .map(c->c.value)
-                .reduce(CardValue.POINTLESS,(acc, ele) -> acc.add(ele));
+                .reduce(CardValue.POINTLESS, CardValue::add);
     }
 
     private Stream<Card> allCardsIn (String cardDescriptions) {
