@@ -5,8 +5,8 @@ import java.util.function.IntUnaryOperator;
 public class Hand {
     public final int total;
 
-    public Hand (final String... descriptions) {
-        total = allSuitsFrom(descriptions).chars()
+    public Hand (final String... suitDescriptions) {
+        total = allSuitsFrom(suitDescriptions).chars()
                         .map(valueOfCard())
                         .reduce(0, (a, b) -> a + b);
 
