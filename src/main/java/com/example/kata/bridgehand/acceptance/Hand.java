@@ -4,9 +4,13 @@ import java.util.stream.IntStream;
 
 public class Hand {
     public final int total;
+    public final int spades;
 
     public Hand (final String... suitDescriptions) {
         total = allCardsInHand(suitDescriptions)
+                .map(this::valueOfCard)
+                .sum();
+        spades = suitDescriptions[0].chars()
                 .map(this::valueOfCard)
                 .sum();
     }
