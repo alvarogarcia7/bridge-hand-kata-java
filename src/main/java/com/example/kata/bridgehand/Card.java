@@ -2,32 +2,32 @@ package com.example.kata.bridgehand;
 
 public class Card {
     private final char description;
-    public int value;
+    public CardValue value;
 
     public static Card aNew (char description) {
         return new Card(description, valueOfCard(description));
     }
 
-    private static Integer valueOfCard (int card) {
-        int result = 0;
+    private static CardValue valueOfCard (int card) {
+        CardValue result = CardValue.POINTLESS;
         switch (card) {
             case (int) 'A':
-                result = 4;
+                result = CardValue._4;
                 break;
             case (int) 'K':
-                result = 3;
+                result = CardValue._3;
                 break;
             case (int) 'Q':
-                result = 2;
+                result = CardValue._2;
                 break;
             case (int) 'J':
-                result = 1;
+                result = CardValue._1;
                 break;
         }
         return result;
     }
 
-    private Card (final char description, final Integer value) {
+    private Card (final char description, final CardValue value) {
         this.description = description;
         this.value = value;
     }
@@ -55,4 +55,6 @@ public class Card {
         sb.append('}');
         return sb.toString();
     }
+
+
 }

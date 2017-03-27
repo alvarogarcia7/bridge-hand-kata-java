@@ -1,6 +1,7 @@
 package com.example.kata.bridgehand.acceptance;
 
 
+import com.example.kata.bridgehand.CardValue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -37,11 +38,11 @@ public class SingleCardInASingleSuitHandCalculatorShould {
 
     private String[] handDescription;
 
-    private int expectedHandValue;
+    private CardValue expectedHandValue;
 
     public SingleCardInASingleSuitHandCalculatorShould (final String[] handDescription, final int expectedHandValue) {
         this.handDescription = handDescription;
-        this.expectedHandValue = expectedHandValue;
+        this.expectedHandValue = CardValue.of(expectedHandValue);
     }
 
     @Test

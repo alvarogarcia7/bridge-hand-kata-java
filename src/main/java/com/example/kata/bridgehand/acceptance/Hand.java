@@ -1,20 +1,21 @@
 package com.example.kata.bridgehand.acceptance;
 
 import com.example.kata.bridgehand.Card;
+import com.example.kata.bridgehand.CardValue;
 
 import java.util.stream.Stream;
 
 public class Hand {
-    public final int total;
-    public final int spades;
+    public final CardValue total;
+    public final CardValue spades;
 
     public Hand (final String... suitDescriptions) {
         total = allCardsIn(hand(suitDescriptions))
-                .mapToInt(card -> card.value)
-                .sum();
+                .map(c->c.value)
+                .reduce(CardValue.POINTLESS,(acc, ele) -> acc.add(ele));
         spades = allCardsIn(spades(suitDescriptions))
-                .mapToInt(card -> card.value)
-                .sum();
+                .map(c->c.value)
+                .reduce(CardValue.POINTLESS,(acc, ele) -> acc.add(ele));
     }
 
     private Stream<Card> allCardsIn (String cardDescriptions) {

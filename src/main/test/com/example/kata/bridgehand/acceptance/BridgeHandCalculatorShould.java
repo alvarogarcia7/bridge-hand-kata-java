@@ -1,5 +1,6 @@
 package com.example.kata.bridgehand.acceptance;
 
+import com.example.kata.bridgehand.CardValue;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -20,11 +21,11 @@ public class BridgeHandCalculatorShould {
                 "H???",
                 "D???",
                 "C???");
-        assertThat(hand.total, is(0));
+        assertThat(hand.total, is(CardValue.POINTLESS));
     }
 
     @Test
     public void points_for_spades_suit () {
-        assertThat(MAXIMUM_POINTS_HAND.spades, is(9));
+        assertThat(MAXIMUM_POINTS_HAND.spades, is(CardValue.of(9)));
     }
 }
