@@ -19,6 +19,10 @@ public class SingleCardInASingleSuitHandCalculatorShould {
                 new Object[]{new String[]{"SA???",
                         "H???",
                         "D???",
+                        "C???"}, 4},
+                new Object[]{new String[]{"S????",
+                        "HA??",
+                        "D???",
                         "C???"}, 4}
         });
     }
