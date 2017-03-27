@@ -10,10 +10,12 @@ public class Hand {
     public final CardValue spades;
 
     public Hand (final String... suitDescriptions) {
-        total = allCardsIn(hand(suitDescriptions))
-                .map(c->c.value)
-                .reduce(CardValue.POINTLESS,(acc, ele) -> acc.add(ele));
-        spades = allCardsIn(spades(suitDescriptions))
+        total = addAllMatching(hand(suitDescriptions));
+        spades = addAllMatching(spades(suitDescriptions));
+    }
+
+    private CardValue addAllMatching (final String cardDescriptions) {
+        return allCardsIn(cardDescriptions)
                 .map(c->c.value)
                 .reduce(CardValue.POINTLESS,(acc, ele) -> acc.add(ele));
     }
