@@ -2,7 +2,7 @@ package com.example.kata.bridgehand;
 
 public class Card {
     private final char description;
-    public CardValue value;
+    public final CardValue value;
 
     public static Card aNew (char description) {
         return new Card(description, valueOfCard(description));
