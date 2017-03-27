@@ -1,20 +1,19 @@
 package com.example.kata.bridgehand.acceptance;
 
-import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
+import java.util.stream.IntStream;
 
 public class Hand {
     public final int total;
 
     public Hand (final String... suitDescriptions) {
-        total = allSuitsFrom(suitDescriptions).chars()
+        total = allCardsInHand(suitDescriptions)
                 .map(valueOfCard())
                 .sum();
-
     }
 
-    private String allSuitsFrom (final String[] descriptions) {
-        return String.join("", descriptions);
+    private IntStream allCardsInHand (final String[] suitDescriptions) {
+        return String.join("", suitDescriptions).chars();
     }
 
     private IntUnaryOperator valueOfCard () {
