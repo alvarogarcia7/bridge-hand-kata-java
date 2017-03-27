@@ -18,7 +18,11 @@ public class Hand {
     }
 
     private Stream<Card> allCardsIn(String cardDescriptions) {
-        return cardDescriptions.chars().mapToObj(int_ -> (char) int_).map(c -> Card.aNew(c));
+        return cardDescriptions.chars().mapToObj(this::asChar).map(Card::aNew);
+    }
+
+    private char asChar (final int int_) {
+        return (char) int_;
     }
 
     private String hand (final String[] suitDescriptions) {
