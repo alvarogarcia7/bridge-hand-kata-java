@@ -17,8 +17,11 @@ public class Hand {
                 .sum();
     }
 
-    private Stream<Card> allCardsIn(String cardDescriptions) {
-        return cardDescriptions.chars().mapToObj(this::asChar).map(Card::aNew);
+    private Stream<Card> allCardsIn (String cardDescriptions) {
+        return cardDescriptions
+                .chars()
+                .mapToObj(this::asChar)
+                .map(Card::aNew);
     }
 
     private char asChar (final int int_) {
