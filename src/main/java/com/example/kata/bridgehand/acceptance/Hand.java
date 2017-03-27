@@ -1,5 +1,6 @@
 package com.example.kata.bridgehand.acceptance;
 
+import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
 
 public class Hand {
@@ -8,8 +9,12 @@ public class Hand {
     public Hand (final String... suitDescriptions) {
         total = allSuitsFrom(suitDescriptions).chars()
                         .map(valueOfCard())
-                        .reduce(0, (a, b) -> a + b);
+                        .reduce(0, sum());
 
+    }
+
+    private IntBinaryOperator sum () {
+        return (a, b) -> a + b;
     }
 
     private String allSuitsFrom (final String[] descriptions) {
