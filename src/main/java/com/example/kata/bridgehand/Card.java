@@ -5,23 +5,20 @@ public class Card {
     public final CardValue value;
 
     public static Card aNew (char description) {
-        return new Card(description, valueOfCard(description));
-    }
 
-    private static CardValue valueOfCard (int card) {
-        CardValue result = CardValue.POINTLESS;
-        switch (card) {
+        Card result = new Card(description, CardValue.POINTLESS);
+        switch (description) {
             case (int) 'A':
-                result = CardValue._4;
+                result = new Card(description, CardValue._4);
                 break;
             case (int) 'K':
-                result = CardValue._3;
+                result = new Card(description, CardValue._3);
                 break;
             case (int) 'Q':
-                result = CardValue._2;
+                result = new Card(description, CardValue._2);
                 break;
             case (int) 'J':
-                result = CardValue._1;
+                result = new Card(description, CardValue._1);
                 break;
         }
         return result;
