@@ -23,7 +23,9 @@ public class SingleCardInAMultipleSuitsHandCalculatorShould {
                 new Object[]{"Ace and King", new String[]{"SA???",
                         "HK??",
                         "D???",
-                        "C???"}, 7}
+                        "C???"}, 7},
+                new Object[]{"Ace and Queen", new String[]{"SA???",
+                        "HQ????????"}, 6}
         });
     }
 
