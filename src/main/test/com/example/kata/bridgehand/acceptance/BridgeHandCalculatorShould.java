@@ -1,6 +1,7 @@
 package com.example.kata.bridgehand.acceptance;
 
 import com.example.kata.bridgehand.CardValue;
+import com.example.kata.bridgehand.Hand;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

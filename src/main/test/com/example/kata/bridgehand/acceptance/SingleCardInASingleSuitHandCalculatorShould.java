@@ -2,6 +2,7 @@ package com.example.kata.bridgehand.acceptance;
 
 
 import com.example.kata.bridgehand.CardValue;
+import com.example.kata.bridgehand.Hand;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

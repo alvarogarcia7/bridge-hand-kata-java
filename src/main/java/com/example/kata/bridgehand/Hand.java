@@ -1,4 +1,4 @@
-package com.example.kata.bridgehand.acceptance;
+package com.example.kata.bridgehand;
 
 import com.example.kata.bridgehand.Card;
 import com.example.kata.bridgehand.CardValue;
